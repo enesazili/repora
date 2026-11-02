@@ -1,0 +1,352 @@
+/*
+ * Repora appearance tokens
+ * ------------------------
+ * Six palettes × two colour modes. Every combination defines the same
+ * primitive token set. Components must only consume semantic tokens
+ * (var(--surface), bg-accent, ...), never raw hex.
+ *
+ * The tokens are declared on `[data-palette][data-mode]` rather than `:root`
+ * so a palette preview can be scoped to a single element on the settings page.
+ * `:root` repeats the default dark palette so server-rendered pages (login,
+ * public reports) have a complete token set before the boot script runs.
+ */
+
+:root,
+[data-palette="default"][data-mode="dark"] {
+  color-scheme: dark;
+  --background: #0e1116;
+  --foreground: #e7ebf0;
+  --surface: #161b22;
+  --surface-secondary: #1d232c;
+  --sidebar: #0e1116;
+  --border: #2b333d;
+  --border-strong: #46505c;
+  --muted: #1b212a;
+  --muted-foreground: #9aa4b0;
+  --accent: #4d8df7;
+  --accent-foreground: #08111f;
+  --success: #46b45f;
+  --warning: #d7a13a;
+  --danger: #f2685f;
+  --chart-1: #4d8df7;
+  --chart-2: #a67cf8;
+  --chart-3: #46b45f;
+  --chart-4: #f0883e;
+  --chart-5: #e56aa6;
+}
+
+[data-palette="default"][data-mode="light"] {
+  color-scheme: light;
+  --background: #f7f8fa;
+  --foreground: #1a1d21;
+  --surface: #ffffff;
+  --surface-secondary: #f1f3f6;
+  --sidebar: #ffffff;
+  --border: #dde1e6;
+  --border-strong: #b6bcc4;
+  --muted: #eef1f4;
+  --muted-foreground: #565d66;
+  --accent: #2563eb;
+  --accent-foreground: #ffffff;
+  --success: #157f3b;
+  --warning: #8a5a00;
+  --danger: #c0272d;
+  --chart-1: #2563eb;
+  --chart-2: #7c3aed;
+  --chart-3: #157f3b;
+  --chart-4: #b45309;
+  --chart-5: #be185d;
+}
+
+[data-palette="nord"][data-mode="dark"] {
+  color-scheme: dark;
+  --background: #2e3440;
+  --foreground: #eceff4;
+  --surface: #353c4a;
+  --surface-secondary: #3b4252;
+  --sidebar: #2b313c;
+  --border: #4c566a;
+  --border-strong: #616e88;
+  --muted: #3b4252;
+  --muted-foreground: #b8c2d2;
+  --accent: #88c0d0;
+  --accent-foreground: #1d2530;
+  --success: #a3be8c;
+  --warning: #ebcb8b;
+  --danger: #ef8f96;
+  --chart-1: #88c0d0;
+  --chart-2: #81a1c1;
+  --chart-3: #a3be8c;
+  --chart-4: #ebcb8b;
+  --chart-5: #b48ead;
+}
+
+[data-palette="nord"][data-mode="light"] {
+  color-scheme: light;
+  --background: #eceff4;
+  --foreground: #2e3440;
+  --surface: #ffffff;
+  --surface-secondary: #e5e9f0;
+  --sidebar: #e5e9f0;
+  --border: #d0d6e0;
+  --border-strong: #aab3c2;
+  --muted: #e5e9f0;
+  --muted-foreground: #4c566a;
+  --accent: #45678f;
+  --accent-foreground: #ffffff;
+  --success: #4a7c3f;
+  --warning: #8a6410;
+  --danger: #b3394a;
+  --chart-1: #45678f;
+  --chart-2: #6b5b95;
+  --chart-3: #4a7c3f;
+  --chart-4: #a05a1e;
+  --chart-5: #a83d6b;
+}
+
+[data-palette="gruvbox"][data-mode="dark"] {
+  color-scheme: dark;
+  --background: #282828;
+  --foreground: #ebdbb2;
+  --surface: #32302f;
+  --surface-secondary: #3c3836;
+  --sidebar: #1d2021;
+  --border: #504945;
+  --border-strong: #665c54;
+  --muted: #3c3836;
+  --muted-foreground: #bdae93;
+  --accent: #fe8019;
+  --accent-foreground: #1d2021;
+  --success: #b8bb26;
+  --warning: #fabd2f;
+  --danger: #fb6a5e;
+  --chart-1: #fe8019;
+  --chart-2: #83a598;
+  --chart-3: #b8bb26;
+  --chart-4: #fabd2f;
+  --chart-5: #d3869b;
+}
+
+[data-palette="gruvbox"][data-mode="light"] {
+  color-scheme: light;
+  --background: #fbf1c7;
+  --foreground: #3c3836;
+  --surface: #fff9e6;
+  --surface-secondary: #f2e5bc;
+  --sidebar: #f2e5bc;
+  --border: #d5c4a1;
+  --border-strong: #bdae93;
+  --muted: #f2e5bc;
+  --muted-foreground: #665c54;
+  --accent: #af3a03;
+  --accent-foreground: #fbf1c7;
+  --success: #63620a;
+  --warning: #8a5a00;
+  --danger: #9d0006;
+  --chart-1: #af3a03;
+  --chart-2: #076678;
+  --chart-3: #79740e;
+  --chart-4: #b57614;
+  --chart-5: #8f3f71;
+}
+
+[data-palette="solarized"][data-mode="dark"] {
+  color-scheme: dark;
+  --background: #002b36;
+  --foreground: #d9e3e0;
+  --surface: #073642;
+  --surface-secondary: #0b3e4b;
+  --sidebar: #00252e;
+  --border: #174c59;
+  --border-strong: #2a6270;
+  --muted: #0a3a46;
+  --muted-foreground: #9db1b2;
+  --accent: #2aa198;
+  --accent-foreground: #002b36;
+  --success: #96a800;
+  --warning: #d3a625;
+  --danger: #ff7b72;
+  --chart-1: #2aa198;
+  --chart-2: #4aa8e0;
+  --chart-3: #859900;
+  --chart-4: #f08a4b;
+  --chart-5: #f26aa8;
+}
+
+[data-palette="solarized"][data-mode="light"] {
+  color-scheme: light;
+  --background: #fdf6e3;
+  --foreground: #3c4a4f;
+  --surface: #fffbf0;
+  --surface-secondary: #f1ead6;
+  --sidebar: #f2ead6;
+  --border: #ded6c0;
+  --border-strong: #c4bba3;
+  --muted: #f2ead6;
+  --muted-foreground: #566a71;
+  --accent: #0f6b9a;
+  --accent-foreground: #ffffff;
+  --success: #5f7a00;
+  --warning: #8a6d00;
+  --danger: #c0271f;
+  --chart-1: #268bd2;
+  --chart-2: #6c71c4;
+  --chart-3: #859900;
+  --chart-4: #cb4b16;
+  --chart-5: #d33682;
+}
+
+[data-palette="rose"][data-mode="dark"] {
+  color-scheme: dark;
+  --background: #1c1618;
+  --foreground: #f3e7ea;
+  --surface: #251d20;
+  --surface-secondary: #2f2529;
+  --sidebar: #171113;
+  --border: #42343a;
+  --border-strong: #5d4a52;
+  --muted: #2c2226;
+  --muted-foreground: #bfa9b0;
+  --accent: #ef8fa8;
+  --accent-foreground: #1c1618;
+  --success: #7cc48f;
+  --warning: #e8bd72;
+  --danger: #ff8a8a;
+  --chart-1: #ef8fa8;
+  --chart-2: #c79bf0;
+  --chart-3: #7cc48f;
+  --chart-4: #f0b06a;
+  --chart-5: #e57fb8;
+}
+
+[data-palette="rose"][data-mode="light"] {
+  color-scheme: light;
+  --background: #fdf6f7;
+  --foreground: #2b2126;
+  --surface: #fffbfc;
+  --surface-secondary: #f8ecef;
+  --sidebar: #f8ecef;
+  --border: #ecd8dd;
+  --border-strong: #d3b3bb;
+  --muted: #f8ecef;
+  --muted-foreground: #6b5560;
+  --accent: #b03a5b;
+  --accent-foreground: #ffffff;
+  --success: #2f7a4f;
+  --warning: #8a5c00;
+  --danger: #b02a37;
+  --chart-1: #b03a5b;
+  --chart-2: #7b4b94;
+  --chart-3: #2f7a4f;
+  --chart-4: #a85a1c;
+  --chart-5: #a3407f;
+}
+
+[data-palette="monokai"][data-mode="dark"] {
+  color-scheme: dark;
+  --background: #272822;
+  --foreground: #f8f8f2;
+  --surface: #30312a;
+  --surface-secondary: #3a3b33;
+  --sidebar: #1f201b;
+  --border: #49483e;
+  --border-strong: #62614f;
+  --muted: #37382f;
+  --muted-foreground: #bcbcab;
+  --accent: #a6e22e;
+  --accent-foreground: #1f201b;
+  --success: #a6e22e;
+  --warning: #e6db74;
+  --danger: #ff6188;
+  --chart-1: #a6e22e;
+  --chart-2: #66d9ef;
+  --chart-3: #f92672;
+  --chart-4: #fd971f;
+  --chart-5: #ae81ff;
+}
+
+[data-palette="monokai"][data-mode="light"] {
+  color-scheme: light;
+  --background: #f7f6f2;
+  --foreground: #23241f;
+  --surface: #fffefa;
+  --surface-secondary: #efeee7;
+  --sidebar: #efeee7;
+  --border: #dcdbd0;
+  --border-strong: #bcbbae;
+  --muted: #efeee7;
+  --muted-foreground: #5d5f52;
+  --accent: #c01a5c;
+  --accent-foreground: #ffffff;
+  --success: #4f7a0a;
+  --warning: #8a6000;
+  --danger: #b3242f;
+  --chart-1: #c01a5c;
+  --chart-2: #6a4bb5;
+  --chart-3: #4f7a0a;
+  --chart-4: #b05a00;
+  --chart-5: #0b7285;
+}
+
+/* Derived tokens: recomputed per palette/mode scope, including preview cards. */
+:where([data-palette][data-mode]) {
+  --accent-muted: color-mix(in srgb, var(--accent) 13%, var(--surface));
+  --accent-subtle: color-mix(in srgb, var(--accent) 6%, var(--surface));
+  --success-muted: color-mix(in srgb, var(--success) 14%, var(--surface));
+  --warning-muted: color-mix(in srgb, var(--warning) 14%, var(--surface));
+  --danger-muted: color-mix(in srgb, var(--danger) 14%, var(--surface));
+  --chart-grid: color-mix(in srgb, var(--foreground) 9%, transparent);
+  --heatmap-0: color-mix(in srgb, var(--foreground) 7%, var(--surface));
+  --heatmap-1: color-mix(in srgb, var(--accent) 24%, var(--surface));
+  --heatmap-2: color-mix(in srgb, var(--accent) 42%, var(--surface));
+  --heatmap-3: color-mix(in srgb, var(--accent) 66%, var(--surface));
+  --heatmap-4: var(--accent);
+  --ring: var(--accent);
+  --selection: color-mix(in srgb, var(--accent) 26%, transparent);
+  --overlay: rgb(0 0 0 / 0.48);
+  --panel-bg: var(--surface);
+  --panel-border: var(--border);
+  --panel-shadow:
+    0 1px 2px rgb(0 0 0 / 0.05),
+    0 18px 40px -32px rgb(0 0 0 / 0.35);
+  --sidebar-bg: var(--sidebar);
+  --topbar-bg: var(--background);
+  --glass-blur: 0px;
+  --control-bg: var(--surface);
+  --control-hover: var(--surface-secondary);
+  --track-bg: color-mix(in srgb, var(--foreground) 10%, var(--surface));
+}
+
+/*
+ * Glassmorphism is an independent layer on top of any palette/mode. It only
+ * changes chrome/panel surfaces and never the text or chart colours.
+ */
+html[data-glass="on"] {
+  --panel-bg: color-mix(in srgb, var(--surface) 72%, transparent);
+  --panel-border: color-mix(in srgb, var(--foreground) 14%, transparent);
+  --panel-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.06),
+    0 24px 56px -36px rgb(0 0 0 / 0.65);
+  --sidebar-bg: color-mix(in srgb, var(--sidebar) 76%, transparent);
+  --topbar-bg: color-mix(in srgb, var(--background) 68%, transparent);
+  --glass-blur: 18px;
+  --control-bg: color-mix(in srgb, var(--surface) 76%, transparent);
+}
+
+/* Manual motion preference, independent from the OS setting. */
+html[data-motion="reduced"] *,
+html[data-motion="reduced"] *::before,
+html[data-motion="reduced"] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+html[data-motion="reduced"] .panel,
+html[data-motion="reduced"] .app-topbar,
+html[data-motion="reduced"] .app-sidebar,
+html[data-motion="reduced"] .glass-chrome {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
